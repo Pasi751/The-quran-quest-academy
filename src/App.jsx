@@ -8,10 +8,12 @@ import Feestructure from './pages/Feestructure'
 import Enrollment from './pages/Enrollment'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />

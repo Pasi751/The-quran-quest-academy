@@ -36,7 +36,7 @@ const Navbar = () => {
             </Link>
           ))}
           
-           <a href="https://wa.me/1234567890"
+           <a href="https://wa.me/+923182042652"
             target="_blank"
             rel="noopener noreferrer"
             className="font-dm flex items-center gap-2 bg-[#1F596B] hover:bg-[#174a5a] text-white px-4 py-1 rounded-tl-lg rounded-br-lg transition duration-200"

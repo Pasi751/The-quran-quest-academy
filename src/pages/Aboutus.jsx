@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
-import Image1 from '../images/Image1.png'
-import Image2 from '../images/Image2.png'
-import Image3 from '../images/Image3.jpg'
+import Image1 from '../images/Image4.jpg'
+import Image2 from '../images/Image5.jpg'
+import Image3 from '../images/Aboutus-hero.jpg'
 
 
 const FadeInSection = ({ children, className = '' }) => {
@@ -97,7 +97,7 @@ const Aboutus = () => {
       </FadeInSection>
 
       <FadeInSection>
-        <section className="flex flex-col md:flex-row-reverse items-center max-w-7xl mx-auto md:px-32 py-6 md:py-12 px-5 mt-16 md:mt-30">
+        <section className="flex flex-col md:flex-row-reverse items-center max-w-7xl mx-auto md:px-32 py-6 md:py-12 px-5 mt-16 md:mt-30 mb-30">
           <div className="w-full md:w-1/2 flex justify-center">
             <img
               src={Image2}

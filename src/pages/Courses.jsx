@@ -1,13 +1,13 @@
 import React from 'react'
-import HeroImage from '../images/Image3.jpg'
+import HeroImage from '../images/Our-courses-hero.jpg'
 
 import AdultCourse1 from '../images/Course1.jpg'
 import AdultCourse2 from '../images/Course2.jpg'
 import AdultCourse3 from '../images/Course3.jpg'
 import AdultCourse4 from '../images/Course4.jpg'
-import AdultCourse5 from '../images/Course5.jpg'
+import AdultCourse5 from '../images/Course5.jpeg'
 import AdultCourse6 from '../images/Course6.jpg'
-import AdultCourse7 from '../images/Course7.jpg'
+import AdultCourse7 from '../images/Course7.jpeg'
 import AdultCourse8 from '../images/Course8.jpg'
 import AdultCourse9 from '../images/Course9.jpg'
 
@@ -17,10 +17,10 @@ import KidsCourse3 from '../images/Course12.jpg'
 import KidsCourse4 from '../images/Course14.jpg'
 import KidsCourse5 from '../images/Course15.jpg'
 import KidsCourse6 from '../images/Course16.jpg'
-import KidsCourse7 from '../images/Course17.jpg'
+import KidsCourse7 from '../images/Course17.jpeg'
 import KidsCourse8 from '../images/Course18.jpg'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const adultCourses = [
   { name: 'Madani Qaida / Quranic Qaida with Tajweed', image: AdultCourse1, description: 'The "Qaida for Beginners" course is designed exclusively for individuals who aspire to learn how to read the Quran with proficiency and fluency.' },
@@ -41,32 +41,32 @@ const kidsCourses = [
   { name: 'Islam for Kids', image: KidsCourse4, description: 'An engaging introduction to the fundamentals of Islam, designed for young learners.' },
   { name: 'Basic Fiqh Learning', image: KidsCourse5, description: 'Students will learn about all the Islamic Rituals (Pillars of Islam) and related problems.' },
   { name: '40 Hadiths', image: KidsCourse6, description: 'A simplified collection of Hadiths that are essential for the moral development and easy for children to understand.' },
-  { name: 'Siratun Nabi (P.B.U.H)', image: KidsCourse7, description: 'This course covers the life and teachings of the Prophet Muhammad (PBUH), providing valuable lessons and inspiration.' },
+  { name: 'Seerah of Prophet P.B.U.H', image: KidsCourse7, description: 'This course covers the life and teachings of the Prophet Muhammad (PBUH), providing valuable lessons and inspiration.' },
   { name: 'Tarbiyah', image: KidsCourse8, description: 'Aimed at cultivating the moral and ethical values in children, this course provides a strong foundation in Islamic teachings.' },
 ]
 
 const BentoCard = ({ course, className = '' }) => {
-  const [active, setActive] = React.useState(false)
+  const navigate = useNavigate()
 
   return (
     <div
       className={`relative overflow-hidden group cursor-pointer ${className}`}
-      onClick={() => setActive(!active)}
+      onClick={() => navigate(`/enrollment?course=${encodeURIComponent(course.name)}`)}
     >
       <img
         src={course.image}
         alt={course.name}
-        className={`w-full h-full object-cover transition-transform duration-500 ease-out ${active ? 'scale-110' : ''} group-hover:scale-110`}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
       />
-      <div className={`absolute inset-0 transition duration-500 ${active ? 'bg-gradient-to-t from-black/80 via-black/50 to-transparent' : 'bg-gradient-to-t from-black/70 via-black/20 to-transparent'} group-hover:from-black/80 group-hover:via-black/50`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 group-hover:via-black/50 transition duration-500" />
 
-      <div className={`absolute bottom-0 left-0 right-0 p-3 sm:p-3 transition-all duration-400 ${active ? 'opacity-0 translate-y-2' : ''} group-hover:opacity-0 group-hover:translate-y-2`}>
+      <div className="absolute bottom-0 left-0 right-0 p-3 transition-all duration-400 group-hover:opacity-0 group-hover:translate-y-2">
         <h3 className="font-amstel text-lg sm:text-base lg:text-lg text-white drop-shadow-md line-clamp-2">
           {course.name}
         </h3>
       </div>
 
-      <div className={`absolute inset-0 flex flex-col justify-end p-3 sm:p-3 transition-all duration-400 overflow-y-auto ${active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} group-hover:opacity-100 group-hover:translate-y-0`}>
+      <div className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 overflow-y-auto">
         <h3 className="font-amstel text-base sm:text-xs lg:text-sm text-white mb-1 drop-shadow-md">
           {course.name}
         </h3>

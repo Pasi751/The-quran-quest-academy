@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import HeroImage from '../images/Image3.jpg'
+import React, { useState, useEffect } from 'react'
+import HeroImage from '../images/Enroll-Now-Hero.jpg'
+import { useSearchParams } from 'react-router-dom'
 
 const adultCourses = [
   'Madani Qaida / Quranic Qaida with Tajweed',
@@ -33,10 +34,27 @@ const plans = [
 ]
 
 const Enrollment = () => {
+
+  const [searchParams] = useSearchParams()
   const [category, setCategory] = useState('')
+  const [selectedCourse, setSelectedCourse] = useState('')
+
+  useEffect(() => {
+    const courseParam = searchParams.get('course')
+    if (courseParam) {
+      const isAdult = adultCourses.includes(courseParam)
+      const isKids = kidsCourses.includes(courseParam)
+      if (isAdult) {
+        setCategory('adult')
+        setSelectedCourse(courseParam)
+      } else if (isKids) {
+        setCategory('kids')
+        setSelectedCourse(courseParam)
+      }
+    }
+  }, [searchParams])
 
   const courses = category === 'adult' ? adultCourses : category === 'kids' ? kidsCourses : []
-
   return (
     <div>
       {/* Hero Section */}
@@ -62,13 +80,19 @@ const Enrollment = () => {
             Fill in the details below and we'll get you started on your Quranic learning path.
           </p>
 
-          <div className="space-y-5">
+          <form action="https://formsubmit.co/thequranquestofficial@gmail.com" method="POST" className="space-y-5">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://thequraanquest.com/enrollment" />
+            <input type="hidden" name="_subject" value="New Enrollment Submission" />
+
             {/* Name & Email row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="font-dm text-sm text-gray-700 block mb-1.5">Full Name</label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="Your full name"
                   className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
                 />
@@ -77,6 +101,8 @@ const Enrollment = () => {
                 <label className="font-dm text-sm text-gray-700 block mb-1.5">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="Your email address"
                   className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
                 />
@@ -89,6 +115,8 @@ const Enrollment = () => {
                 <label className="font-dm text-sm text-gray-700 block mb-1.5">Phone</label>
                 <input
                   type="tel"
+                  name="phone"
+                  required
                   placeholder="Your phone number"
                   className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
                 />
@@ -97,6 +125,8 @@ const Enrollment = () => {
                 <label className="font-dm text-sm text-gray-700 block mb-1.5">Age</label>
                 <input
                   type="number"
+                  name="age"
+                  required
                   placeholder="Your age"
                   className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
                 />
@@ -108,6 +138,8 @@ const Enrollment = () => {
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Country</label>
               <input
                 type="text"
+                name="country"
+                required
                 placeholder="Your country"
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
               />
@@ -118,8 +150,10 @@ const Enrollment = () => {
               <div>
                 <label className="font-dm text-sm text-gray-700 block mb-1.5">Course Category</label>
                 <select
+                  name="category"
+                  required
                   value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  onChange={(e) => { setCategory(e.target.value); setSelectedCourse('') }}
                   className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white appearance-none"
                 >
                   <option value="">Select category</option>
@@ -130,6 +164,10 @@ const Enrollment = () => {
               <div>
                 <label className="font-dm text-sm text-gray-700 block mb-1.5">Course</label>
                 <select
+                  name="course"
+                  required
+                  value={selectedCourse}
+                  onChange={(e) => setSelectedCourse(e.target.value)}
                   disabled={!category}
                   className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white appearance-none disabled:opacity-50"
                 >
@@ -145,6 +183,8 @@ const Enrollment = () => {
             <div>
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Plan</label>
               <select
+                name="plan"
+                required
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white appearance-none"
               >
                 <option value="">Select a plan</option>
@@ -159,16 +199,20 @@ const Enrollment = () => {
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Message / Notes</label>
               <textarea
                 rows={4}
+                name="message"
                 placeholder="Any additional notes or questions?"
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white resize-none"
               />
             </div>
 
             {/* Submit */}
-            <button className="w-full font-dm bg-[#1F596B] hover:bg-[#174a5a] text-white py-3 rounded-tl-xl rounded-br-xl transition duration-200 text-base font-medium">
+            <button
+              type="submit"
+              className="w-full font-dm bg-[#1F596B] hover:bg-[#174a5a] text-white py-3 rounded-tl-xl rounded-br-xl transition duration-200 text-base font-medium cursor-pointer"
+            >
               Submit Enrollment
             </button>
-          </div>
+          </form>
         </div>
       </section>
     </div>

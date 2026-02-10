@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import HeroImage from '../images/Image3.jpg'
+import HeroImage from '../images/Fee-Structure-Hero.jpg'
 
 const plans = [
   {
@@ -172,11 +172,20 @@ const Feestructure = () => {
             We're here to help. Fill out the form below and we'll get back to you shortly.
           </p>
 
-          <div className="space-y-5">
+          <form action="https://formsubmit.co/thequranquestofficial@gmail.com" method="POST" className="space-y-5">
+            {/* Disable captcha (optional) */}
+            <input type="hidden" name="_captcha" value="false" />
+            {/* Redirect after submission (optional - change URL to your thank you page) */}
+            <input type="hidden" name="_next" value="https://thequraanquest.com/fee-structure" />
+            {/* Subject line */}
+            <input type="hidden" name="_subject" value="New Inquiry from Fee Structure Page" />
+
             <div>
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Name</label>
               <input
                 type="text"
+                name="name"
+                required
                 placeholder="Your full name"
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
               />
@@ -185,6 +194,8 @@ const Feestructure = () => {
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Email</label>
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Your email address"
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
               />
@@ -193,6 +204,8 @@ const Feestructure = () => {
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Phone</label>
               <input
                 type="tel"
+                name="phone"
+                required
                 placeholder="Your phone number"
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white"
               />
@@ -201,14 +214,19 @@ const Feestructure = () => {
               <label className="font-dm text-sm text-gray-700 block mb-1.5">Message</label>
               <textarea
                 rows={4}
+                name="message"
+                required
                 placeholder="How can we help you?"
                 className="w-full font-dm text-sm px-4 py-3 border border-gray-300 rounded-tl-xl rounded-br-xl focus:outline-none focus:border-[#1F596B] transition duration-200 bg-white resize-none"
               />
             </div>
-            <button className="w-full font-dm bg-[#1F596B] hover:bg-[#174a5a] text-white py-3 rounded-tl-xl rounded-br-xl transition duration-200">
+            <button
+              type="submit"
+              className="w-full font-dm bg-[#1F596B] hover:bg-[#174a5a] text-white py-3 rounded-tl-xl rounded-br-xl transition duration-200 cursor-pointer"
+            >
               Send Inquiry
             </button>
-          </div>
+          </form>
         </div>
       </section>
     </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import Image1 from '../images/Image1.png'
 import Image2 from '../images/Image2.png'
 import Image3 from '../images/Image3.jpg'
@@ -20,17 +21,17 @@ import Icon5 from '../images/icon5.png'
 
 
 const adultCourses = [
-  { name: 'Madani Qaida/ Quranic qaida', image: Course1, description: 'The "Qaida for Beginners" course is designed exclusively for individuals who aspire to learn how to read the Quran with proficiency and fluency.' },
+  { name: 'Madani Qaida / Quranic Qaida with Tajweed', image: Course1, description: 'The "Qaida for Beginners" course is designed exclusively for individuals who aspire to learn how to read the Quran with proficiency and fluency.' },
   { name: 'Quran with Tajweed and Tarteel', image: Course2, description: 'The "Tajweed and Tarteel" course enhances Quranic recitation for those who have read Quran and Qaida, focusing on confidence, fluency, and melodious tone through Tajweed principles.' },
-  { name: 'Quran memorization', image: Course3, description: 'The "Quran Memorization (Hifz)" is designed for individuals who aspire to commit the entire Quran to memory, a noble endeavor in the path of Islam.' },
-  { name: 'Tafseer e Quran.( Deep understanding of the Quran)', image: Course4, description: 'The "Tafsir of the Quran" course is designed for individuals who seek to deepen their understanding of the Quran by exploring its interpretation and commentary' },
+  { name: 'Quran Memorization', image: Course3, description: 'The "Quran Memorization (Hifz)" is designed for individuals who aspire to commit the entire Quran to memory, a noble endeavor in the path of Islam.' },
+  { name: 'Tafseer e Quran', image: Course4, description: 'The "Tafsir of the Quran" course is designed for individuals who seek to deepen their understanding of the Quran by exploring its interpretation and commentary' },
 ]
 
 const kidsCourses = [
   { name: 'Qaida for Beginners', image: Course5, description: 'This course is perfect for those who are new to Quranic studies and want to learn Quran Reading.' },
-  { name: 'Quran reading For beginners', image: Course6, description: 'Designed to help students read the Quran fluently following Tajweed rules and regulations, with an emphasis on proper pronunciation and rhythm.' },
-  { name: 'Quran memorization', image: Course7, description: 'Made for those who wish to commit the Quran to memory, this course offers structured memorization plans and techniques.' },
-  { name: 'Quran with Tajweed & Tarteel', image: Course8, description: 'Teach your children the fundamentals of Islam through interactive and age-appropriate lessons.' },
+  { name: 'Quran Reading for Beginners', image: Course6, description: 'Designed to help students read the Quran fluently following Tajweed rules and regulations, with an emphasis on proper pronunciation and rhythm.' },
+  { name: 'Quran Memorization', image: Course7, description: 'Made for those who wish to commit the Quran to memory, this course offers structured memorization plans and techniques.' },
+  { name: 'Basic Fiqh Learning', image: Course8, description: 'Students will learn about all the Islamic Rituals (Pillars of Islam) and related problems.' },
 ]
 
 const principles = [
@@ -114,11 +115,12 @@ const Homepage = () => {
             <p className="font-dm mt-4 text-lg text-gray-200">
               Helping you learn, understand, and connect with the Quran.
             </p>
-            <a href="#"
+            <Link
+              to="/enrollment"
               className="font-dm inline-block mt-6 px-8 py-3 bg-[#1F596B] hover:bg-[#174a5a] text-white font-semibold rounded-tl-3xl rounded-br-3xl transition duration-200"
             >
               START YOUR JOURNEY
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -236,11 +238,12 @@ const Homepage = () => {
 
         <div className="flex justify-center">
 
-          <a href="#"
+          <Link
+            to="/enrollment"
             className="font-dm bg-[#1F596B] hover:bg-[#174a5a] text-white px-8 py-2.5 rounded-tl-xl rounded-br-xl transition duration-200"
           >
             Join Now
-          </a>
+          </Link>
         </div>
       </section>
 

@@ -94,17 +94,9 @@ export default function Footer() {
               >
                 <li><NavLink to="/" className="hover:opacity-80 transition-opacity">Home</NavLink></li>
                 <li><NavLink to="/about" className="hover:opacity-80 transition-opacity">About us</NavLink></li>
-                <li><NavLink to="/courses" className="hover:opacity-80 transition-opacity">Courses Page</NavLink></li>
+                <li><NavLink to="/courses" className="hover:opacity-80 transition-opacity">Courses</NavLink></li>
                 <li><NavLink to="/fee-structure" className="hover:opacity-80 transition-opacity">Fee structure</NavLink></li>
-                <li>
-                  <button
-                    onClick={handleEnrollmentClick}
-                    className="hover:opacity-80 transition-opacity text-left"
-                  >
-                    Enrollment
-                  </button>
-                </li>
-                <li><NavLink to="/faq" className="hover:opacity-80 transition-opacity">FAQ</NavLink></li>
+                <li><NavLink to="/enrollment" className="hover:opacity-80 transition-opacity">Enrollment</NavLink></li>
               </ul>
             </div>
 
@@ -127,28 +119,28 @@ export default function Footer() {
 
               {/* Social Media Icons */}
               <div className="flex justify-center md:justify-start space-x-2">
-                <a href="tel:+923305580053" className="hover:scale-110 transition-transform">
+                <a href="tel:+923182042652" className="hover:scale-110 transition-transform">
                   <img
                     src={Phone}
                     alt="Phone"
                     className="w-5 h-5"
                   />
                 </a>
-                <a href="https://wa.me/+923305580053?text=Hello%20there!%20I%27m%20interested%20in%20your%20services." target="_blank" className="hover:scale-110 transition-transform">
+                <a href="https://wa.me/+923182042652?text=Hello%20there!%20I%27m%20interested%20in%20your%20services." target="_blank" className="hover:scale-110 transition-transform">
                   <img
                     src={Whatsapp}
                     alt="WhatsApp"
                     className="w-5 h-5"
                   />
                 </a>
-                <a href="https://www.instagram.com/daralhuda.official?utm_source=qr&igsh=NGl2cXpzbXg1OTBr" target="_blank" className="hover:scale-110 transition-transform">
+                <a href="https://www.instagram.com/thequranquest.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="hover:scale-110 transition-transform">
                   <img
                     src={Instagram}
                     alt="Instagram"
                     className="w-5 h-5"
                   />
                 </a>
-                <a href="https://www.facebook.com/share/1JnHCVbf2G/" target="_blank" className="hover:scale-110 transition-transform">
+                <a href="https://web.facebook.com/thequranquestofficial/" target="_blank" className="hover:scale-110 transition-transform">
                   <img
                     src={Facebook}
                     alt="Facebook"
