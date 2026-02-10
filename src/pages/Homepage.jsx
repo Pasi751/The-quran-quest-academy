@@ -16,6 +16,7 @@ import Icon1 from '../images/icon1.png'
 import Icon2 from '../images/icon2.png'
 import Icon3 from '../images/icon3.png'
 import Icon4 from '../images/icon4.png'
+import Icon5 from '../images/icon5.png'
 
 
 const adultCourses = [
@@ -37,6 +38,7 @@ const principles = [
   { name: 'Multilingual', icon: Icon2 },
   { name: 'Caring Teachers', icon: Icon3 },
   { name: 'Safe Learning', icon: Icon4 },
+  { name: '24/7 Scheduling', icon: Icon5 },
 ]
 
 const feedbacks = [
@@ -140,7 +142,7 @@ const Homepage = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-amstel text-[#1F596B] max-w-xs mb-4">
               Reflect From the Heart and Strengthen Your Faith
             </h2>
-            <p className="font-dm font-extralight text-sm sm:text-base">
+            <p className="font-dm font-light text-sm sm:text-base">
               Every moment spent learning the Quran is a step toward personal and spiritual growth.
               Through consistent study and reflection, you can develop a stronger sense of purpose,
               deepen your faith, and carry the guidance of the Quran into your daily life.
@@ -162,7 +164,7 @@ const Homepage = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-amstel text-[#1F596B] max-w-xs mb-4">
               Walk Your Learning Path With Gentle Guidance
             </h2>
-            <p className="font-dm font-extralight text-sm sm:text-base">
+            <p className="font-dm font-light text-sm sm:text-base">
               No matter where you begin, this journey is supported with guidance that meets
               you at your level. The learning experience is designed to be encouraging and
               steady, helping you progress with confidence while feeling supported at every
@@ -187,7 +189,7 @@ const Homepage = () => {
 
         {/* Paragraph */}
         <div className="px-6 sm:px-12 md:px-24 lg:px-48 py-16">
-          <p className="font-dm font-extralight text-sm sm:text-base text-center leading-relaxed">
+          <p className="font-dm font-light text-sm sm:text-base text-center leading-relaxed">
             The Quran Quest is an online Islamic learning institute dedicated to making Qur'anic education accessible, meaningful, and
             transformative for students around the world. Our mission is to help learners of all ages connect deeply with the Book of Allah ﷻ
             through correct recitation, understanding, and practical application in daily life. Founded with a vision to bridge traditional Islamic
@@ -217,11 +219,15 @@ const Homepage = () => {
           Principles That Shape Our<br />Learning Environment
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-5xl mx-auto mb-12">
           {principles.map((item, index) => (
-            <div key={index} className="flex flex-col items-center gap-4">
+            <div
+              key={index}
+              className={`flex flex-col items-center gap-4 ${index === principles.length - 1 ? 'col-span-2 sm:col-span-1' : ''
+                }`}
+            >
               <img src={item.icon} alt={item.name} className="w-16 h-16" />
-              <p className="font-dm text-sm sm:text-base font-extralight text-center">
+              <p className="font-dm text-sm sm:text-base font-light text-center">
                 {item.name}
               </p>
             </div>

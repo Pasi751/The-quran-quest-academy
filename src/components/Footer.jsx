@@ -167,7 +167,7 @@ export default function Footer() {
           <p
             className="font-dm text-center text-xs md:text-sm text-white-900 font-extralight"
           >
-            © 2025 Dar Al Huda Quran Academy. All rights reserved.
+            © 2026 The Quran Quest Online Academy. All rights reserved.
           </p>
         </div>
       </div>
