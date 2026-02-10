@@ -40,10 +40,10 @@ const Aboutus = () => {
       {/* About Section */}
       <section className=''>
         {/* Image with overlay and title */}
-        <div className="relative w-full h-[400px] sm:h-[500px] bg-cover bg-center"
+        <div className="relative w-full h-[600px] sm:h-[600px] bg-cover bg-center"
           style={{ backgroundImage: `url(${Image3})` }}
         >
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-10 flex items-center justify-center h-full">
             <h2 className="font-amstel text-4xl sm:text-5xl md:text-6xl text-white text-center px-4">
               The Quran Quest Online Academy
@@ -53,7 +53,7 @@ const Aboutus = () => {
 
         {/* Paragraph */}
         <div className="px-6 sm:px-12 md:px-24 lg:px-48 py-16">
-          <p className="font-dm font-extralight text-sm sm:text-base text-center leading-relaxed">
+          <p className="font-dm font-light text-sm sm:text-base text-center leading-relaxed">
             The Quran Quest is an online Islamic learning institute dedicated to making Qur'anic education accessible, meaningful, and
             transformative for students around the world. Our mission is to help learners of all ages connect deeply with the Book of Allah ﷻ
             through correct recitation, understanding, and practical application in daily life. Founded with a vision to bridge traditional Islamic
@@ -87,7 +87,7 @@ const Aboutus = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-amstel text-[#1F596B] max-w-xs mb-4">
               Reflect From the Heart and Strengthen Your Faith
             </h2>
-            <p className="font-dm font-extralight text-sm sm:text-base">
+            <p className="font-dm font-light text-sm sm:text-base">
               Every moment spent learning the Quran is a step toward personal and spiritual growth.
               Through consistent study and reflection, you can develop a stronger sense of purpose,
               deepen your faith, and carry the guidance of the Quran into your daily life.
@@ -109,7 +109,7 @@ const Aboutus = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-amstel text-[#1F596B] max-w-xs mb-4">
               Walk Your Learning Path With Gentle Guidance
             </h2>
-            <p className="font-dm font-extralight text-sm sm:text-base">
+            <p className="font-dm font-light text-sm sm:text-base">
               No matter where you begin, this journey is supported with guidance that meets
               you at your level. The learning experience is designed to be encouraging and
               steady, helping you progress with confidence while feeling supported at every
